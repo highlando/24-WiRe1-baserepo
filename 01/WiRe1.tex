@@ -1,0 +1,137 @@
+\documentclass[12pt]{scrartcl}
+\usepackage[german]{babel}     % Neue Deutsche Rechtschreibung
+\usepackage[utf8]{inputenc}    % Zeichencodierung nach UTF-8 (Unicode) - PDF\LaTeX\,\LaTeX\
+
+\usepackage{amsmath, amssymb}  % f\"ur die Mathematik
+\usepackage{xcolor}            % mehr Farben
+\usepackage{graphicx}          % Bilder
+\usepackage[colorlinks=true, linkcolor=teal]{hyperref}  % Links im Text und ins web
+
+\begin{document}
+
+
+\begin{tabular}{lp{3.3cm}r}
+\textbf{Dr. Axel Wolf}&&\textbf{TU Ilmenau}\\ \textbf{Dr. Jan Heiland} &&\\
+\textbf{Wintersemester 2024/25}&& \textbf{Institut f\"ur Mathematik}
+\end{tabular}
+
+%\vsph
+\begin{center}
+{\Large \textbf{ Wissenschaftliches Rechnen 1 - \"Ubungsblatt 1}}\\[1em]
+{\large Besprechung am 17. Oktober 2024}
+\\ \textbf{
+--------------------------------------------------------------------------------------------------}
+\end{center}
+
+\tableofcontents
+
+\section{Los geht's} Besorgen Sie sich eine \LaTeX{} Umgebung (z.B.
+\emph{TexMaker})
+oder melden Sie sich mittels SSO\footnote{\emph{single sign on}} und ihrem Uni
+account bei \emph{overleaf} an.
+
+\section{Wir fangen einfach an}
+\begin{enumerate}
+  \item Starten Sie mit einem minimalen \LaTeX template%
+    \footnote{z.B. von hier
+    \href{https://www.overleaf.com/read/bbdzfwnxkyyp\#1976b0}{im overleaf} oder
+  hier \href{https://github.com/highlando/24-WiRe1-baserepo/blob/main/wire-1-template.tex}{bei
+Github}
+}
+    und bereiten Sie diese
+    Abgabe vor, indem sie schon mal die Kapitel\"uberschriften hinschreiben.
+\item Erzeugen Sie ein Inhaltsverzeichnis und setzen Sie es vor den Text.
+\end{enumerate}
+
+\section{Es ist ganz einfach}
+\textit{Schreiben Sie zu jedem \emph{Kapitel/jeder Aufgabe} einen motivierenden oder
+erkl\"arenden Satz.} (bitte in kursiver Schrift)
+
+\section{(M)ein Lebenslauf}  
+\begin{enumerate}
+\item 
+Schreiben Sie in \LaTeX\ einen (fiktiven) tabellarisch aufgebauten Lebenslauf in zwei Spalten. 
+\item
+Setzen Sie eine Fu"snote mit einem Hinweis auf den Geburtsort an das Geburtsdatum.
+\item
+Binden Sie ein (fiktives) Foto über die Tabelle und beschriften Sie es.
+\end{enumerate}
+
+Kein Problem: siehe Tabelle \ref{tab:meinlebenslauf}.
+
+\begin{table}[t]
+  \includegraphics[width=.1\textwidth]{siegel-deutsch\_jpeg.jpg}
+
+  \begin{tabular}{|l|r|}
+    \hline
+    \textbf{Name:} & Jan \\
+    \hline
+    \hline
+    Geboren & vor ein paar Jahren\footnotemark \\
+    \hline
+    Beruf & Mathe\\
+    \hline
+  \end{tabular}
+  \caption{Mein Lebenslauf}
+  \label{tab:meinlebenslauf}
+\end{table}
+\footnotetext{im S\"uden}
+
+\section{Ein paar Formeln}
+
+\textit{Hier der Versuch, Gleichungen sch\"on auszurichten}. Mit
+\verb$\phantom{{-}2<{}}$, wobei das \verb${-}$ erzielt, dass das \emph{minus}
+  als unit\"arer Operator auftritt (vgl. ${-}1$ vs. $0-1$); wusste ich auch
+  noch nicht and \verb${}<{}$ sicherstellt, dass das $<$ die richtigen
+  Abst\"ande erzeugt.
+\begin{equation*}
+  f(x) =
+  \begin{cases}
+    \frac{\sin(x)}{x^2+1}\phantom{\sqrt{1}}\quad &\text{f\"ur}\ \phantom{{-}2<{}} x < -2 \\
+    e^{x-1} + x^2 \quad &\text{f\"ur}\ {-}2 \leq x \leq 1 \\
+    \sqrt{3 + \ln(x)} \quad & \text{f\"ur } \phantom{{-}}1 \leq x
+  \end{cases}
+\end{equation*}
+
+\section{Gleichungssysteme, Matrizen, Vektoren}
+\begin{enumerate}
+\item
+Schreiben Sie in \LaTeX\ folgende Darstellung eines linearen Gleichungssystems mit den Unbekannten $x_1,\,x_2,\, x_3$ und $x_4$. 
+\[
+ \begin{array}{rrrrrr}
+    4x_1  &        & + 3x_3  &  - x_4 & = & 6\\
+          & 2x_2   & - 4x_3  &  + x_4  & = & 0\\ 
+    x_1   & + 4x_2 &         &  - x_4  & = & -4\\
+          &        & - 3x_3  &  + 8x_4 & = & 1
+ \end{array}  
+\]
+\item Notieren Sie das Gleichungssystem aus (a) in Matrix-Vektor-Schreibweise: $A x = b$ mit Klammern.
+  \begin{equation*}
+    \begin{bmatrix}
+      4  &  0     & \phantom{-}3  &  {-}1\\
+      0  & 2   & {-}4  &  \phantom{-}1\\ 
+      1   & 4 &     \phantom{{-}}0   &  {-}1 \\
+      0   &  0     & {-}3  &  \phantom{-}8
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1\\x_2\\x_3\\x_4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \phantom{{-}}6\\\phantom{{-}}0\\{-}4\\\phantom{{-}}1
+    \end{bmatrix}
+  \end{equation*}
+\end{enumerate}
+
+
+\section{Integrale und Summen}
+
+Notieren Sie in \LaTeX\ die summierte Trapezformel zur N"aherung des bestimmten
+Integrals einer stetigen Funktion $f: \mathbb R \to \mathbb R$ im Intervall $[a,b]$ mit \\ $h = \frac{\textstyle \rule{0em}{0.8em} b-a}{\textstyle \rule{0em}{0.8em} n}$ und $n+1$ St"utzstellen $t_i= a + i\cdot h, \; i = 0,1,\ldots, n$ auf zwei Arten: 
+\begin{eqnarray*}
+  \int\limits_a^bf(t) \operatorname{d} t & \approx & h\cdot  \sum_{i = 0}^{n-1}\left (\frac{ f(t_i)  + f(t_{i+1})}{ 2}\right)
+\\
+ & \approx & \frac{b-a}{2 n}\left ( f(a)  + f(b) + 2 \cdot \sum_{i = 1}^{n-1} f(t_i)\right)
+ \end{eqnarray*}
+
+\end{document} 
